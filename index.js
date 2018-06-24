@@ -8,6 +8,7 @@ const keys = require('./config/keys');
 
 // models
 require('./models/User');
+require('./models/Survey');
 mongoose.connect(keys.mongoURI);
 
 // services
@@ -29,6 +30,7 @@ app.use(passport.session());
 // routes
 require('./routes/auth')(app);
 require('./routes/billing')(app);
+require('./routes/survey')(app);
 
 // react
 if (process.env.NODE_ENV === 'production') {
